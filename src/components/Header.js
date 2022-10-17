@@ -1,40 +1,44 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/styles";
-import wolvesBadge from "../images/wolvesBadge.png";
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import wolvesBadge from "../images/wolvesBadge.jpg";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
 import SideBar from "./SideBar";
 import NavLinks from "../Navigation/NavLinks";
 import NavBar from "../Navigation/NavBar";
-import './../Navigation/MainNav.css'
-import './Sidebar.css'
+import Backdrop from './Backdrop'
+import "./../Navigation/MainNav.css";
+import "./Sidebar.css";
+import './Header.css'
 
 const useStyles = makeStyles({
   container: {
     display: "flex",
-    width: "auto",
-    height: "13vh",
+    width: "100%",
+    height: "14vh",
     color: "white",
     background: "black",
     fontSize: "14px",
+    paddingBottom: '25px',
   },
   left: {
     display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: "flex-end",
+    paddingLeft: '25px',
+    justifyContent: "left",
     width: "25vw",
     height: "100%",
-    border: " black solid 1px",
   },
   center: {
     display: "flex",
     alignItems: "center",
     fontSize: "6vw",
     justifyContent: "center",
-    objectFit: 'cover',
-    paddingTop: '5px',
-    width: "50vw",
+    objectFit: "cover",
+    paddingTop: "5px",
+    width: "40vh",
     height: "100%",
-    border: " black solid 1px",
     color: "orange",
   },
   right: {
@@ -43,43 +47,50 @@ const useStyles = makeStyles({
     justifyContent: "center",
     width: "25vw",
     height: "100%",
-    border: " black solid 1px",
-  }
+    "&:hover": {
+      cursor: "pointer",
+    },
+  },
 });
 
 const Header = () => {
-
   const classes = useStyles();
 
-  const [drawerIsOpen, setDrawerIsOpen] = useState(false)
+  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
   const openDrawerHandler = () => {
-      setDrawerIsOpen (true);
+    setDrawerIsOpen(true);
   };
 
   const closeDrawerHandler = () => {
-      setDrawerIsOpen (false)
+    setDrawerIsOpen(false);
   };
 
   return (
     <React.Fragment>
-    <SideBar show={drawerIsOpen} onClick={closeDrawerHandler}>
-      <nav className='main-navigation__drawer-nav'><NavLinks style={{ flexDirection: 'column'}}/></nav>
-    </SideBar>
-    <div className={classes.container}>
-      <div className={classes.left}>Header Left</div>
-      <div className={classes.center}>
-        <img 
-        src={wolvesBadge} 
-        width='85%' 
-        height='85%' 
-        alt="Wolves Badge" />
+      {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
+      <SideBar show={drawerIsOpen} onClick={closeDrawerHandler}>
+        <nav className="main-navigation__drawer-nav">
+          <NavLinks />
+        </nav>
+      </SideBar>
+      <div className={classes.container}>
+        <div className={classes.left}>
+          <a style={{color: '#348feb'}} href='https://www.facebook.com/groups/102407936939834'>
+            <FacebookIcon style={{fontSize: '4vh'}} />
+            </a>
+            <a style={{color: 'white'}} href='https://www.instagram.com/wolvessolutionsltd/'>
+            <InstagramIcon style={{fontSize: '4vh'}} />
+            </a>
+            </div>
+        <div className={classes.center}>
+          <img src={wolvesBadge} width="70%" height="60%" alt="Wolves Badge" />
+        </div>
+        <div className="main-navigation__menu-btn" onClick={openDrawerHandler}>
+          <MenuRoundedIcon style={{ fontSize: '4vh'}}/>
+          Menu
+        </div>
       </div>
-      <div
-       className={classes.right}><MenuRoundedIcon 
-      onClick={openDrawerHandler}/>
-      </div>
-    </div>
-    <NavBar />
+      <NavBar />
     </React.Fragment>
   );
 };
