@@ -25,7 +25,8 @@ const Enquiry = () => {
 
   return (
     <div className={classes.main}>
-  <h1>Enquiry</h1>
+  <h1>Application</h1>
+  <p>Speak to Mark or Kieran</p>
 
     </div>
   )

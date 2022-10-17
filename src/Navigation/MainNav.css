@@ -8,6 +8,9 @@
     justify-content: space-around;
     margin-right: 2rem;
     cursor: pointer;
+    padding-top: 7vh;
+    padding-left: 50px;
+    font-size: 1.5vh;
   }
   
   .main-navigation__menu-btn span {

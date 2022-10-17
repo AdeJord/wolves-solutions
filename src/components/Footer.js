@@ -6,8 +6,8 @@ const useStyles = makeStyles({
     display: "flex",
     width: "auto",
     height: "auto",
-    color: "white",
-    background: "black",
+    color: "black",
+    background: "white",
   },
   left: {
     display: "flex",
@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     justifyContent: "center",
     width: "33.3333333%",
     height: "15vh",
-    border: " black solid 1px",
+    // border: " black solid 1px",
   },
   center: {
     display: "flex",
@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     justifyContent: "center",
     width: "33.3333333%",
     height: "15vh",
-    border: " black solid 1px",
+    // border: " black solid 1px",
   },
   right: {
     display: "flex",
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
     justifyContent: "center",
     width: "33.3333333%",
     height: "15vh",
-    border: " black solid 1px",
+    // border: " black solid 1px",
   },
 });
 

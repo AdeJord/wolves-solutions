@@ -1,0 +1,37 @@
+
+.main {
+    padding-top: 20px;
+    width: 100vw;
+    height: auto;
+    font-size: 2vh;
+    color: white;
+
+    text-align: center;
+};
+
+.header {
+    width: 90%;
+    height: auto;
+    text-align: center;
+};
+
+.image {
+    height: 400px;
+    width: auto;
+    /* background-color: red; */
+    padding-bottom: 25px
+};
+
+.content {
+    padding-top: 10px;
+    width: auto;
+    padding: 20px;
+    height: auto;
+    font-size: 2vh;
+    color: white;
+    text-align: center;
+    align-content: center;
+    background-color: red;
+};
+
+
